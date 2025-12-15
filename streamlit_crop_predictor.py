@@ -71,8 +71,6 @@ def load_model(path: str):
 
 model = load_model(MODELFILE)
 
-st.subheader("Model status")
-st.success("✅ RandomForest loaded from file.")
 st.info("**Offline test accuracy: 99.32%**")
 st.caption(f"Expected features: {model.feature_names_in_.tolist()}")
 
@@ -131,7 +129,7 @@ with st.form("prediction_form"):
     rainfall = st.number_input(
         "Rainfall (mm)", 0.0, 400.0, st.session_state["rand_values"]["rainfall"]
     )
-    submit = st.form_submit_button("🔮 Predict Crop", use_container_width=True)
+    submit = st.form_submit_button("🌾 Predict Crop", use_container_width=True)
 
 # Your existing crop lookup (unchanged)
 crop_data = {
@@ -235,5 +233,6 @@ with st.expander("🚀 Quick Start"):
     **3. Test with Rice:** N=90, P=42, K=43, temp=20.9, hum=82, pH=6.5, rain=203  
     **Expected:** "rice" with 99%+ confidence
     """)
+
 
 
